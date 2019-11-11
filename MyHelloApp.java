@@ -1,5 +1,3 @@
-import java.awt.event.*;
-import javax.swing.*;
 /**
  * MyHelloApp 클래스를 구현하는 클래스.
  * 

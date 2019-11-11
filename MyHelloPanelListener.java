@@ -10,8 +10,30 @@ import java.awt.event.*;
 public class MyHelloPanelListener extends MouseAdapter 
                                   implements KeyListener{
     public JPanel mp = new JPanel();
-    public void keyPressed(KeyEvent e){
+    private final int FLYING_UNIT = 10;
+    public MyHelloPanel(){
+        ml = new JLabel("Hello");
+        addKeyListener(this);
+        this.add(ml);
         
+    }
+    public void keyPressed(KeyEvent e) {
+        int keyCode = e.getKeyCode(); // 입력된 키의 키코드를 알아낸다.
+        
+        //키 코드 값(keyCode)에 따라 상,하,자,와 키를 판별하고 la의 위치를 이동시킨다.
+        switch(keyCode) {
+            case KeyEvent.VK_UP: //UP 키
+            ml.setLocation(ml.getX(), ml.getY()-FLYING_UNIT);
+            System.out.println(ml.getX() + FLYING_UNIT);
+            break;
+            case KeyEvent.VK_DOWN: // DOWN 키
+            ml.setLocation(ml.getX(), ml.getY()+FLYING_UNIT); break;
+            case KeyEvent.VK_LEFT: // DOWN 키
+            ml.setLocation(ml.getX()-FLYING_UNIT, ml.getY()); break;
+            case KeyEvent.VK_RIGHT: // DOWN 키
+            ml.setLocation(ml.getX()+FLYING_UNIT, ml.getY()); break;
+
+        }
     }
     public void keyReleased(KeyEvent e){}
     public void keyTyped(KeyEvent e){}
