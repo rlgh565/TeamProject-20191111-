@@ -10,6 +10,7 @@ import java.awt.event.*;
 public class MyHelloPanelListener extends JPanel 
                                   implements KeyListener,MouseListener{
     private final int FLYING_UNIT = 10;
+    public JLabel la;
     public MyHelloPanelListener(JLabel la){
         this.la = la;
     }

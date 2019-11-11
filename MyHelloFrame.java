@@ -15,9 +15,13 @@ public class MyHelloFrame extends JFrame
         this.setTitle("실습_3(20191111)");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(300,300);
-        
-      
         la = new JLabel("Hello");
+        MyHelloPanelListener mp = new MyHelloPanelListener(la);
+        
+        mp.setFocusable(true);//이게 없으면 KeyListener은 coponent를 작동시키지 않는다 .
+
+        this.add(mp);
+        
         
         setVisible(true);
     }
