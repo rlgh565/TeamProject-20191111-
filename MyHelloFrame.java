@@ -17,11 +17,11 @@ public class MyHelloFrame extends JFrame
         this.setSize(300,300);
         la = new JLabel("Hello");
         MyHelloPanelListener mp = new MyHelloPanelListener(la);
-        
+        this.addMouseListener(mp);
         mp.setFocusable(true);//이게 없으면 KeyListener은 coponent를 작동시키지 않는다 .
-
-        this.add(mp);
         
+        this.add(mp);
+        mp.add(la);
         
         setVisible(true);
     }
