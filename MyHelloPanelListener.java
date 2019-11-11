@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 /**
- * Write a description of class MyHelloPanelListener here.
+ * Panel 역할 하는 MyHelloPanelListener 클래스 
  *
  * @author (2018210025현기호,2018315053테라오카 유이카)
  * @version (20191111)
@@ -11,8 +11,11 @@ public class MyHelloPanelListener extends JPanel
                                   implements KeyListener,MouseListener{
     private final int FLYING_UNIT = 10;
     public JLabel la;
-    public MyHelloPanelListener(JLabel la){
-        this.la = la;
+    public MyHelloPanelListener(){
+        la = new JLabel("Hello");
+        addKeyListener(this); 
+        addMouseListener(this);
+        this.add(la);
     }
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode(); // 입력된 키의 키코드를 알아낸다.
