@@ -19,7 +19,6 @@ public class MyHelloFrame extends JFrame
       
         la = new JLabel("Hello");
         
-        
         setVisible(true);
     }
 }
